@@ -4,7 +4,7 @@ const prisma = require("../prisma");
 
 const seed = async (numTracks = 20) => {
   const tracks = Array.from({ length: numTracks }, () => ({
-    name: faker.song.title(),
+    name: faker.music.songName(),
   }));
   await prisma.track.createMany({ data: tracks });
 };
